@@ -13,7 +13,7 @@ float H2, LPG, CO, Alcohol, Propane, Benzene;
 void onRequestEvent();
 int turnToInt(float t);
 void setIntoBuffer(byte buff[],int val);
-void sendData(byte buff[2]);
+void sendData(byte buff[]);
 
 void setup() {
     Serial.begin(9600);
@@ -70,7 +70,7 @@ void setIntoBuffer(byte buff[],int val){
     buff[1]=val>>8;
 
 }
-void sendData(byte buff[2]){
+void sendData(byte buff[]){
     Wire.write(buff[0]);
     Wire.write(buff[1]);
 }
